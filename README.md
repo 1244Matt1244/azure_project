@@ -15,6 +15,7 @@ Web Apps:
 Create three Web App resources with arbitrary names.
 These are small web apps, so choose cost-effective configurations.
 Assume that users will access the apps from Croatia.
+
 PowerShell Script for Web App Creation:
 Write a PowerShell script (using the Az PowerShell module) that creates a new Web App.
 The new app should share resources with the existing ones.
