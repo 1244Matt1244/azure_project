@@ -29,6 +29,5 @@ Save the generated JSON ARM template to a file.
 Git Repository:
 Upload both the .ps1 file and the ARM JSON file to a public Git repository.
 
-Share the Repository Link:
-
+Share the Repository Link: 
 Send us the link to your repository.
