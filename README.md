@@ -17,8 +17,8 @@ Before you begin, ensure you have the following:
 ## Repository Contents
 
 
-- `create-webapp.ps1`: A PowerShell script to create a new Azure Web App.
-- `exported-template.json`: An ARM template that defines the SQL databases and Web Apps.
+- `2CreateWebApp2.ps1`: A PowerShell script to create a new Azure Web App.
+- `template.json`: An ARM template that defines the SQL databases and Web Apps.
 
 - `parameters.json`: A parameters file to supply values to the ARM template.
 
