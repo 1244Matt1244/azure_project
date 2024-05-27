@@ -41,4 +41,4 @@ To create a new Web App using the provided PowerShell script:
 2. Execute the script with the required parameters:
 
 ```powershell
-.\create-webapp.ps1 -resourceGroupName "YourResourceGroupName" -servicePlanName "YourServicePlanName" -webAppName "YourWebAppName" -location "YourLocation"
+.\2CreateWebApp2.ps1 -resourceGroupName "YourResourceGroupName" -servicePlanName "YourServicePlanName" -webAppName "YourWebAppName" -location "YourLocation"
