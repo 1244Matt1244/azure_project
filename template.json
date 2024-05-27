@@ -1,0 +1,117 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "resourceGroupName": {
+          "type": "string"
+      },
+      "sqlServerName": {
+          "type": "string"
+      },
+      "webAppServicePlanName": {
+          "type": "string"
+      },
+      "webAppNamePrefix": {
+          "type": "string"
+      },
+      "location": {
+          "type": "string"
+      }
+  },
+  "resources": [
+      {
+          "type": "Microsoft.Sql/servers",
+          "apiVersion": "2019-06-01-preview",
+          "name": "[parameters('sqlServerName')]",
+          "location": "[parameters('location')]",
+          "properties": {
+              "administratorLogin": "syskitadmin",
+              "administratorLoginPassword": "A_Strong_Password_123!"
+          },
+          "resources": [
+              {
+                  "type": "databases",
+                  "apiVersion": "2019-06-01-preview",
+                  "name": "database1",
+                  "location": "[parameters('location')]",
+                  "sku": {
+                      "name": "Basic"
+                  },
+                  "dependsOn": [
+                      "[concat('Microsoft.Sql/servers/', parameters('sqlServerName'))]"
+                  ]
+              },
+              {
+                  "type": "databases",
+                  "apiVersion": "2019-06-01-preview",
+                  "name": "database2",
+                  "location": "[parameters('location')]",
+                  "sku": {
+                      "name": "Basic"
+                  },
+                  "dependsOn": [
+                      "[concat('Microsoft.Sql/servers/', parameters('sqlServerName'))]"
+                  ]
+              },
+              {
+                  "type": "databases",
+                  "apiVersion": "2019-06-01-preview",
+                  "name": "database3",
+                  "location": "[parameters('location')]",
+                  "sku": {
+                      "name": "Basic"
+                  },
+                  "dependsOn": [
+                      "[concat('Microsoft.Sql/servers/', parameters('sqlServerName'))]"
+                  ]
+              }
+          ]
+      },
+      {
+          "type": "Microsoft.Web/serverfarms",
+          "apiVersion": "2020-06-01",
+          "name": "[parameters('webAppServicePlanName')]",
+          "location": "[parameters('location')]",
+          "sku": {
+              "name": "F1",
+              "tier": "Free"
+          }
+      },
+      {
+          "type": "Microsoft.Web/sites",
+          "apiVersion": "2020-06-01",
+          "name": "[concat(parameters('webAppNamePrefix'), '1')]",
+          "location": "[parameters('location')]",
+          "dependsOn": [
+              "[resourceId('Microsoft.Web/serverfarms', parameters('webAppServicePlanName'))]"
+          ],
+          "properties": {
+              "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('webAppServicePlanName'))]"
+          }
+      },
+      {
+          "type": "Microsoft.Web/sites",
+          "apiVersion": "2020-06-01",
+          "name": "[concat(parameters('webAppNamePrefix'), '2')]",
+          "location": "[parameters('location')]",
+          "dependsOn": [
+              "[resourceId('Microsoft.Web/serverfarms', parameters('webAppServicePlanName'))]"
+          ],
+          "properties": {
+              "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('webAppServicePlanName'))]"
+          }
+      },
+      {
+          "type": "Microsoft.Web/sites",
+          "apiVersion": "2020-06-01",
+          "name": "[concat(parameters('webAppNamePrefix'), '3')]",
+          "location": "[parameters('location')]",
+          "dependsOn": [
+              "[resourceId('Microsoft.Web/serverfarms', parameters('webAppServicePlanName'))]"
+          ],
+          "properties": {
+              "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('webAppServicePlanName'))]"
+          }
+      }
+  ]
+}
