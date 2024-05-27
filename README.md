@@ -37,7 +37,7 @@ Before you begin, ensure you have the following:
 To create a new Web App using the provided PowerShell script:
 
 
-1. Open PowerShell and navigate to the directory containing the `create-webapp.ps1` script.
+1. Open PowerShell and navigate to the directory containing the `2CreateWebApp2.ps1` script.
 2. Execute the script with the required parameters:
 
 ```powershell
