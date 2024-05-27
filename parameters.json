@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vulnerabilityAssessments_Default_storageContainerPath": {
+            "value": null
+        },
+        "sites_SysWebApp1_name": {
+            "value": null
+        },
+        "sites_SysWebApp2_name": {
+            "value": null
+        },
+        "sites_SysWebApp3_name": {
+            "value": null
+        },
+        "sites_2SysWebApp2_name": {
+            "value": null
+        },
+        "servers_syskitsqlserver_name": {
+            "value": null
+        },
+        "serverfarms_SyskitAppServicePlan_name": {
+            "value": null
+        }
+    }
+}
