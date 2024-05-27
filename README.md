@@ -1,33 +1,44 @@
-# azure_project
-Cloud DevOps assignment
+# Syskit Junior Cloud DevOps Assignment
 
-Create a Free Azure Subscription:
-Visit Azure Free Account to create your free Azure subscription.
+## Overview
 
-Resource Group Creation:
-In the Azure portal, create a new resource group where you’ll organize all your resources.
+This repository contains the necessary Azure Resource Manager (ARM) templates and PowerShell scripts to complete the Syskit Junior Cloud DevOps assignment. The assignment involves creating Azure resources, including a resource group, SQL databases, and Web Apps, with a focus on cost-efficiency and resource sharing.
 
-SQL Databases:
-Create three SQL Database resources with arbitrary names.
-Ensure that these databases share resources to optimize costs.
+## Prerequisites
 
-Web Apps:
-Create three Web App resources with arbitrary names.
-These are small web apps, so choose cost-effective configurations.
-Assume that users will access the apps from Croatia.
+Before you begin, ensure you have the following:
 
-PowerShell Script for Web App Creation:
-Write a PowerShell script (using the Az PowerShell module) that creates a new Web App.
-The new app should share resources with the existing ones.
-Save the .ps1 file and push it to your Git repository.
 
-Export ARM Template:
-Open your resource group in the Azure portal.
-Navigate to Automation > Export Template.
-Save the generated JSON ARM template to a file.
+- A GitHub account to host the repository.
+- An email address to create a free Azure subscription.
 
-Git Repository:
-Upload both the .ps1 file and the ARM JSON file to a public Git repository.
+- The Azure PowerShell module installed on your machine.
 
-Share the Repository Link: 
-Send us the link to your repository.
+## Repository Contents
+
+
+- `create-webapp.ps1`: A PowerShell script to create a new Azure Web App.
+- `exported-template.json`: An ARM template that defines the SQL databases and Web Apps.
+
+- `parameters.json`: A parameters file to supply values to the ARM template.
+
+## Instructions
+
+### Creating Azure Resources
+
+
+1. Sign up for a free Azure subscription at https://azure.microsoft.com/en-us/free.
+2. Create a resource group in the Azure portal to organize the resources.
+
+3. Use the Azure portal UI to create three SQL Database resources within the resource group.
+
+### Using the PowerShell Script
+
+To create a new Web App using the provided PowerShell script:
+
+
+1. Open PowerShell and navigate to the directory containing the `create-webapp.ps1` script.
+2. Execute the script with the required parameters:
+
+```powershell
+.\create-webapp.ps1 -resourceGroupName "YourResourceGroupName" -servicePlanName "YourServicePlanName" -webAppName "YourWebAppName" -location "YourLocation"
