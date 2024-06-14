@@ -1,8 +1,8 @@
-# Syskit Junior Cloud DevOps Assignment
+# Azure Cloud DevOps Assignment
 
 ## Overview
 
-This repository contains the necessary Azure Resource Manager (ARM) templates and PowerShell scripts to complete the Syskit Junior Cloud DevOps assignment. The assignment involves creating Azure resources, including a resource group, SQL databases, and Web Apps, with a focus on cost-efficiency and resource sharing.
+This repository contains the necessary Azure Resource Manager (ARM) templates and PowerShell scripts to complete the Azure Cloud DevOps assignment. The assignment involves creating Azure resources, including a resource group, SQL databases, and Web Apps, with a focus on cost-efficiency and resource sharing.
 
 ## Prerequisites
 
