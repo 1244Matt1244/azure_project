@@ -1,13 +1,17 @@
-# Variables
-$resourceGroupName = "SyskitAssignmentGroup_2"
-$servicePlanName = "SyskitAppServicePlan"
-$webAppName = "2SysWebApp2" # Change the suffix number for each new app
-$location = "North Europe"
+param (
+    [string]$resourceGroupName,
+    [string]$servicePlanName,
+    [string]$webAppName,
+    [string]$location
+)
 
-# Connect to Azure
-Connect-AzAccount
+# Create a resource group
+New-AzResourceGroup -Name $resourceGroupName -Location $location
 
-WARNING: Interactive authentication is not supported in this session, please run cmdlet 'Connect-AzAccount -UseDeviceAuthentication'
+# Create an App Service Plan
+New-AzAppServicePlan -Name $servicePlanName -ResourceGroupName $resourceGroupName -Location $location -Tier "Standard" -NumberofWorkers 1
 
-# Create the Web App
-New-AzWebApp -ResourceGroupName $resourceGroupName -AppServicePlan $servicePlanName -Name $webAppName -Location $location
+# Create a Web App
+New-AzWebApp -Name $webAppName -ResourceGroupName $resourceGroupName -Location $location -AppServicePlan $servicePlanName
+
+Write-Host "Web App $webAppName created successfully!"
