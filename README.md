@@ -1,6 +1,3 @@
----
-
-```markdown
 # Azure Project: Web App Creation
 
 This project demonstrates how to create and manage Azure resources such as Web Apps using **PowerShell** and **ARM templates**. It automates the provisioning of services in Azure using scripts and templates.
@@ -47,6 +44,3 @@ az group delete --name YourResourceGroup --no-wait --yes
 
 ## License
 This project is licensed under the MIT License.
-```
-
----
